@@ -1,0 +1,45 @@
+#직사각형 넓이 구하기
+
+# def solution(dots):
+#     x = [] #[1,2,2,1]
+#     y = []
+#     for i in range(4):
+#         x.append=(dots[i][0])
+#         y.append=(dots[i][1])
+#         if x[i]!=x[i+1]:
+#            abs(x[i])+abs(x[i+1])
+#            if y[i] != y[i + 1]:
+#                abs(y[i]) + abs(y[i + 1])
+#                print(x*y)
+#            else:
+#                y.remove(x[i])
+#         else:
+#             x.remove(x[i])
+#
+# dots = [[1,1],[2,1],[2,2],[1,2]]
+# print(solution(dots))
+
+
+
+
+
+
+#겹치는 선분의 길이
+def solution(lines):
+    l=[]
+    count=0
+    for i in lines:
+        for j in range(min(i),max(i)):
+            if j not in l:
+                l.append(j)
+            else:
+                count+=1
+                l.remove(j)
+    return count
+
+
+
+
+
+lines = [[0,1],[2,5],[3,9]]#0,1 , 2,3,4,5 , 3,4,5,6,7,8,9
+print(solution(lines))
